@@ -1473,7 +1473,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/get-started.html",
-          "hash": "zTpDdx+vuvTLGlKW2ZeH6Q=="
+          "hash": "Bbjxc/vm8barsEKnPE1ctg=="
         }
       },
       "is_incremental": false,
@@ -1533,7 +1533,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/introduction/faq.html",
-          "hash": "TYbLiPu74tP8BwXNxWZQ9Q=="
+          "hash": "xdQ0kbeA1jJFMd8dwZGdnA=="
         }
       },
       "is_incremental": false,
@@ -1693,10 +1693,6 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
@@ -1704,6 +1700,10 @@
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
           "incrementalPhase": "build"
         }
       }
