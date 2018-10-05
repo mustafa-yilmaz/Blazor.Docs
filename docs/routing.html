@@ -84,7 +84,9 @@
 @page &quot;/DifferentBlazorRoute&quot;
 
 &lt;h1&gt;Blazor routing&lt;/h1&gt;
-</code></pre><h2 id="route-parameters">Route parameters</h2>
+</code></pre><div class="IMPORTANT"><h5>Important</h5><p>To generate routes properly, the app must include a <code>&lt;base&gt;</code> tag in its <em>wwwroot/index.html</em> file with the app base path specified in the <code>href</code> attribute (<code>&lt;base href=&quot;/&quot; /&gt;</code>). For more information, see <a class="xref" href="routing.html#app-base-path">Host and deploy: App base path</a>.</p>
+</div>
+<h2 id="route-parameters">Route parameters</h2>
 <p>The Blazor client-side router uses route parameters to populate the corresponding component parameters with the same name (case insensitive).</p>
 <p><em>Pages/RouteParameter.cshtml</em>:</p>
 <pre><code class="lang-cshtml">@page &quot;/RouteParameter&quot;
@@ -96,6 +98,84 @@
     [Parameter]
     private string Text { get; set; } = &quot;fantastic&quot;;
 </code></pre><p>Optional parameters aren&#39;t supported yet, so two <code>@page</code> directives are applied in the example above. The first permits navigation to the component without a parameter. The second <code>@page</code> directive takes the <code>{text}</code> route parameter and assigns the value to the <code>Text</code> property.</p>
+<h2 id="route-constraints">Route constraints</h2>
+<p>A route constraint enforces type matching on a route segment to a Blazor component.</p>
+<p>In the following example, the route to the Users component only matches if:</p>
+<ul>
+<li>An <code>Id</code> route segment is present on the request URL.</li>
+<li>The <code>Id</code> segment is an integer (<code>int</code>).</li>
+</ul>
+<pre><code class="lang-cshtml">@page &quot;/Users/{Id:int}&quot;
+
+&lt;h1&gt;The user Id is @Id!&lt;/h1&gt;
+
+@functions {
+    [Parameter]
+    private int Id { get; set; }
+}
+</code></pre><p>The route constraints shown in the following table are available for use. For the route constraints that match with the invariant culture, see the warning below the table for more information.</p>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Example</th>
+<th>Example Matches</th>
+<th style="text-align:center">Invariant<br>culture<br>matching</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td><code>{active:bool}</code></td>
+<td><code>true</code>, <code>FALSE</code></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><code>datetime</code></td>
+<td><code>{dob:datetime}</code></td>
+<td><code>2016-12-31</code>, <code>2016-12-31 7:32pm</code></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td><code>decimal</code></td>
+<td><code>{price:decimal}</code></td>
+<td><code>49.99</code>, <code>-1,000.01</code></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td><code>{weight:double}</code></td>
+<td><code>1.234</code>, <code>-1,001.01e8</code></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>{weight:float}</code></td>
+<td><code>1.234</code>, <code>-1,001.01e8</code></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td><code>guid</code></td>
+<td><code>{id:guid}</code></td>
+<td><code>CD2C1638-1638-72D5-1638-DEADBEEF1638</code>, <code>{CD2C1638-1638-72D5-1638-DEADBEEF1638}</code></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td><code>{id:int}</code></td>
+<td><code>123456789</code>, <code>-123456789</code></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td><code>{ticks:long}</code></td>
+<td><code>123456789</code>, <code>-123456789</code></td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+<div class="WARNING"><h5>Warning</h5><p>Route constraints that verify the URL and are converted to a CLR type (such as <code>int</code> or <code>DateTime</code>) always use the invariant culture. These constraints assume that the URL is non-localizable.</p>
+</div>
 <h2 id="navlink-component">NavLink component</h2>
 <p>Use a NavLink component in place of HTML <strong>&lt;a&gt;</strong> elements when creating navigation links. A NavLink component behaves like an <strong>&lt;a&gt;</strong> element, except it toggles an <code>active</code> CSS class based on whether its <code>href</code> matches the current URL. The <code>active</code> class helps a user understand which page is the active page among the navigation links displayed.</p>
 <p>The NavMenu component in the <a href="https://github.com/aspnet/Blazor.Docs/tree/master/docs/common/samples/">sample app</a> creates a <a href="https://getbootstrap.com/docs/">Bootstrap</a> nav bar that demonstrates how to use NavLink components. The following markup shows the first two NavLinks in the <em>Shared/NavMenu.cshtml</em> file.</p>
