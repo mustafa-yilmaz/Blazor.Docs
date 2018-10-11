@@ -431,6 +431,117 @@ public class BlazorRocksBase : BlazorComponent
 @functions {
     string myMarkup = &quot;&lt;p class=&#39;markup&#39;&gt;This is a &lt;em&gt;markup string&lt;/em&gt;.&lt;/p&gt;&quot;;
 }
+</code></pre><h2 id="templated-components">Templated components</h2>
+<p>Templated components are components that accept one or more UI templates as parameters, which can then be used as part of the component&#39;s rendering logic. Templated components allow you to author higher-level components that are more reusable than regular components. A couple of examples include:</p>
+<ul>
+<li>A table component that allows a user to specify templates for the table&#39;s header, rows, and footer.</li>
+<li>A list component that allows a user to specify a template for rendering items in a list.</li>
+</ul>
+<h3 id="template-parameters">Template parameters</h3>
+<p>A templated component is defined by specifying one or more component parameters of type <code>RenderFragment</code> or <code>RenderFragment&lt;T&gt;</code>. A render fragment represents a segment of UI that is rendered by the component. A render fragment optionally takes a parameter that can be specified when the render fragment is invoked.</p>
+<p><em>Components/TableTemplate.cshtml</em>:</p>
+<pre><code class="lang-cshtml">@typeparam TItem
+
+&lt;table class=&quot;table&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;@TableHeader&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        @foreach (var item in Items)
+        {
+            &lt;tr&gt;@RowTemplate(item)&lt;/tr&gt;
+        }
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;@TableFooter&lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+
+@functions {
+    [Parameter] RenderFragment TableHeader { get; set; }
+    [Parameter] RenderFragment&lt;TItem&gt; RowTemplate { get; set; }
+    [Parameter] RenderFragment TableFooter { get; set; }
+    [Parameter] IReadOnlyList&lt;TItem&gt; Items { get; set; }
+}
+</code></pre><p>When using a templated component, the template parameters can be specified using child elements that match the names of the parameters (<code>TableHeader</code> and <code>RowTemplate</code> in the following example):</p>
+<pre><code class="lang-cshtml">&lt;TableTemplate Items=&quot;@pets&quot;&gt;
+    &lt;TableHeader&gt;
+        &lt;th&gt;ID&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+    &lt;/TableHeader&gt;
+    &lt;RowTemplate&gt;
+        &lt;td&gt;@context.PetId&lt;/td&gt;
+        &lt;td&gt;@context.Name&lt;/td&gt;
+    &lt;/RowTemplate&gt;
+&lt;/TableTemplate&gt;
+</code></pre><h3 id="template-context-parameters">Template context parameters</h3>
+<p>Component arguments of type <code>RenderFragment&lt;T&gt;</code> passed as elements have an implicit parameter named <code>context</code> (for example from the preceding code sample, <code>@context.PetId</code>), but you can change the parameter name using the <code>Context</code> attribute on the child element. In the following example, the <code>RowTemplate</code> element&#39;s <code>Context</code> attribute specifies the <code>pet</code> parameter:</p>
+<pre><code class="lang-cshtml">&lt;TableTemplate Items=&quot;@pets&quot;&gt;
+    &lt;TableHeader&gt;
+        &lt;th&gt;ID&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+    &lt;/TableHeader&gt;
+    &lt;RowTemplate Context=&quot;pet&quot;&gt;
+        &lt;td&gt;@pet.PetId&lt;/td&gt;
+        &lt;td&gt;@pet.Name&lt;/td&gt;
+    &lt;/RowTemplate&gt;
+&lt;/TableTemplate&gt;
+</code></pre><p>Alternatively, you can specify the <code>Context</code> attribute on the component element. The specified <code>Context</code> attribute applies to all specified template parameters. This can be useful when you want to specify the content parameter name for implicit child content (without any wrapping child element). In the following example, the <code>Context</code> attribute appears on the <code>TableTemplate</code> element and applies to all template parameters:</p>
+<pre><code class="lang-cshtml">&lt;TableTemplate Items=&quot;@pets&quot; Context=&quot;pet&quot;&gt;
+    &lt;TableHeader&gt;
+        &lt;th&gt;ID&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+    &lt;/TableHeader&gt;
+    &lt;RowTemplate&gt;
+        &lt;td&gt;@pet.PetId&lt;/td&gt;
+        &lt;td&gt;@pet.Name&lt;/td&gt;
+    &lt;/RowTemplate&gt;
+&lt;/TableTemplate&gt;
+</code></pre><h3 id="generic-typed-components">Generic-typed components</h3>
+<p>Templated components are often generically typed. For example, a generic ListView component can be used to render <code>IEnumerable&lt;T&gt;</code> values. To define a generic component, use the <code>@typeparam</code> directive to specify type parameters.</p>
+<p><em>Components/ListViewTemplate.cshtml</em>:</p>
+<pre><code class="lang-cshtml" highlight-lines="1">@typeparam TItem
+
+&lt;ul&gt;
+    @foreach (var item in Items)
+    {
+        @ItemTemplate(item)
+    }
+&lt;/ul&gt;
+
+@functions {
+    [Parameter] RenderFragment&lt;TItem&gt; ItemTemplate { get; set; }
+    [Parameter] IReadOnlyList&lt;TItem&gt; Items { get; set; }
+}
+</code></pre><p>When using generic-typed components, the type parameter is inferred if possible:</p>
+<pre><code class="lang-cshtml">&lt;ListViewTemplate Items=&quot;@pets&quot;&gt;
+    &lt;ItemTemplate Context=&quot;pet&quot;&gt;
+        &lt;li&gt;@pet.Name&lt;/li&gt;
+    &lt;/ItemTemplate&gt;
+&lt;/ListViewTemplate&gt;
+</code></pre><p>Otherwise, the type parameter must be explicitly specified using an attribute that matches the name of the type parameter. In the following example, <code>TItem=&quot;Pet&quot;</code> specifies the type:</p>
+<pre><code class="lang-cshtml">&lt;ListViewTemplate Items=&quot;@pets&quot; TItem=&quot;Pet&quot;&gt;
+    &lt;ItemTemplate Context=&quot;pet&quot;&gt;
+        &lt;li&gt;@pet.Name&lt;/li&gt;
+    &lt;/ItemTemplate&gt;
+&lt;/ListViewTemplate&gt;
+</code></pre><h2 id="razor-templates">Razor templates</h2>
+<p>Render fragments can be defined using Razor template syntax. Razor templates are a way to define a UI snippet and assume the following format:</p>
+<pre><code class="lang-cshtml">@&lt;tag&gt;...&lt;tag&gt;
+</code></pre><p>The following example illustrates how to specify <code>RenderFragment</code> and <code>RenderFragment&lt;T&gt;</code> values.</p>
+<p><em>RazorTemplates.cshtml</em>:</p>
+<pre><code class="lang-cshtml">@{ 
+    RenderFragment template = @&lt;p&gt;The time is @DateTime.Now.&lt;/p&gt;;
+    RenderFragment&lt;Pet&gt; petTemplate = (pet) =&gt; @&lt;p&gt;Your pet&#39;s name is @pet.Name.&lt;/p&gt;;
+}
+</code></pre><p>Render fragments defined using Razor templates can be passed as arguments to templated components or rendered directly. For example, the previous templates are directly rendered with the following Razor markup:</p>
+<pre><code class="lang-cshtml">@template
+
+@petTemplate(new Pet { Name = &quot;Rex&quot; })
+</code></pre><p>Rendered output:</p>
+<pre><code>The time is 10/04/2018 01:26:52.
+
+Your pet&#39;s name is Rex.
 </code></pre></article>
           </div>
           
