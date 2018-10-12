@@ -75,7 +75,7 @@
 <p>Learn how to route requests in a client-side Blazor app and about the NavLink component.</p>
 <p><a href="https://github.com/aspnet/Blazor.Docs/tree/master/docs/common/samples/">View or download sample code</a> (<a class="xref" href="index.html#view-and-download-samples">how to download</a>). See the <a class="xref" href="get-started.html">Get started</a> topic for prerequisites.</p>
 <h2 id="route-templates">Route templates</h2>
-<p>The <strong>&lt;Router&gt;</strong> component enables routing, and a route template is provided to each accessible component. The <strong>&lt;Router&gt;</strong> component appears in the <em>App.cshtml</em> file:</p>
+<p>The <code>&lt;Router&gt;</code> component enables routing, and a route template is provided to each accessible component. The <code>&lt;Router&gt;</code> component appears in the <em>App.cshtml</em> file:</p>
 <pre><code class="lang-cshtml">&lt;Router AppAssembly=typeof(Program).Assembly /&gt;
 </code></pre><p>When a <em>*.cshtml</em> file with an <code>@page</code> directive is compiled, the generated class is given a <a href="https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routeattribute">RouteAttribute</a> specifying the route template. At runtime, the router looks for component classes with a <code>RouteAttribute</code> and renders whichever component has a route template that matches the requested URL.</p>
 <p>Multiple route templates can be applied to a component. In the <a href="https://github.com/aspnet/Blazor.Docs/tree/master/docs/common/samples/">sample app</a>, the following component responds to requests for <code>/BlazorRoute</code> and <code>/DifferentBlazorRoute</code>.</p>
