@@ -8,7 +8,7 @@
     <title>Blazor components </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Blazor components ">
-    <meta name="generator" content="docfx 2.39.2.0">
+    <meta name="generator" content="docfx 2.40.0.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -260,7 +260,7 @@
 </code></pre><p>When the component is rendered, the <code>loginDialog</code> field is populated with the <code>MyLoginDialog</code> child component instance. You can then invoke .NET methods on the component instance.</p>
 <div class="IMPORTANT"><h5>Important</h5><p>The <code>loginDialog</code> variable is only populated after the component is rendered and its output includes the <code>MyLoginDialog</code> element because until then there is nothing to reference. To manipulate components references after the component has finished rendering, use the <code>OnAfterRenderAsync</code> or <code>OnAfterRender</code> lifecycle methods.</p>
 </div>
-<p>While capturing component references uses a similar syntax to <a class="xref" href="../javascript-interop.html#capturing-references-to-elements">capturing element references</a>, it isn&#39;t a <a class="xref" href="../javascript-interop.html">JavaScript interop</a> feature. Component references aren&#39;t passed to JavaScript code; they&#39;re only used in .NET code.</p>
+<p>While capturing component references uses a similar syntax to <a class="xref" href="../javascript-interop.html#capture-references-to-elements">capturing element references</a>, it isn&#39;t a <a class="xref" href="../javascript-interop.html">JavaScript interop</a> feature. Component references aren&#39;t passed to JavaScript code; they&#39;re only used in .NET code.</p>
 <div class="NOTE"><h5>Note</h5><p>Do <strong>not</strong> use component references to mutate the state of child components. Instead, always use normal declarative parameters to pass data to child components. This causes child components to rerender at the correct times automatically.</p>
 </div>
 <h2 id="lifecycle-methods">Lifecycle methods</h2>
