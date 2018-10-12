@@ -641,6 +641,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Blazor.RenderFragment-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html",
+          "hash": "d4omHsfCwhHyyN8gM9vnSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Microsoft.AspNetCore.Blazor.RenderFragment.yml",
       "output": {
         ".html": {
@@ -669,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.html",
-          "hash": "ZK0gBkbUdvbQ39gTaNc2/g=="
+          "hash": "VNI4jyWOwqqbhS/YrQrqZQ=="
         }
       },
       "is_incremental": false,
@@ -845,6 +857,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html",
+          "hash": "V3XtOLruAQlaTneRwo4d9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Microsoft.AspNetCore.Blazor.Server.Circuits.Circuit.yml",
       "output": {
         ".html": {
@@ -909,19 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Blazor.Server.html",
-          "hash": "pW8IjOOhtHfPNKuXxQJNfA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.html",
-          "hash": "HHvQKaAtVXbjO3Z4dZPF1Q=="
+          "hash": "A7+rcR8NX9M5G3V3aoS+Sg=="
         }
       },
       "is_incremental": false,
@@ -1149,7 +1161,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Blazor.html",
-          "hash": "DYspxiK+fI8/Iz0/Qm55Ag=="
+          "hash": "fHMY+myJUnOJUs2+fjfjUQ=="
         }
       },
       "is_incremental": false,
@@ -1161,7 +1173,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.BlazorApplicationBuilderExtensions.html",
-          "hash": "7wfRdxfEHe+R5N9GTSJkKg=="
+          "hash": "YP1PjVC42UchiiRKq3mdvA=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1197,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.html",
-          "hash": "n4cCKsNX5vv5TCTGdBmknQ=="
+          "hash": "BYD5AGkBH6a78x1RhTtSPg=="
         }
       },
       "is_incremental": false,
@@ -1197,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.AspNetCore.Builder.html",
-          "hash": "Xc1sZhtDcA4BMpWSBYUFyw=="
+          "hash": "4e32qsHgJX6oDvEdVhn1Xg=="
         }
       },
       "is_incremental": false,
@@ -1209,7 +1221,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.html",
-          "hash": "E5GXZKnG0r/EWHATkuc4rA=="
+          "hash": "fmCG0Y7nXtd+ocxR56oCcg=="
         }
       },
       "is_incremental": false,
@@ -1329,7 +1341,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.JSInterop.JSInProcessRuntimeBase.html",
-          "hash": "k7OrazcEvquLSuC18hKMGw=="
+          "hash": "dawi+/8AQV+FrlSTvXe67w=="
         }
       },
       "is_incremental": false,
@@ -1396,6 +1408,30 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html",
+          "hash": "nExudNcTT53pl0XtRUH0mg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mono.WebAssembly.Interop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mono.WebAssembly.Interop.html",
+          "hash": "5XDnRtRJsWZOAYF20Ti6tw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
@@ -1413,7 +1449,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "u5nEMJ1mWMFjs47BQFQw/w=="
+          "hash": "zmWILh1kfmgYax+X3xkaAA=="
         }
       },
       "is_incremental": false,

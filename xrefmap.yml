@@ -2054,6 +2054,79 @@ references:
   commentId: Overload:Microsoft.AspNetCore.Blazor.RenderFragment.Invoke
   fullName: Microsoft.AspNetCore.Blazor.RenderFragment.Invoke
   nameWithType: RenderFragment.Invoke
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1
+  name: RenderFragment<T>
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html
+  commentId: T:Microsoft.AspNetCore.Blazor.RenderFragment`1
+  name.vb: RenderFragment(Of T)
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T)
+  nameWithType: RenderFragment<T>
+  nameWithType.vb: RenderFragment(Of T)
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1.#ctor(System.Object,System.IntPtr)
+  name: RenderFragment(Object, IntPtr)
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html#Microsoft_AspNetCore_Blazor_RenderFragment_1__ctor_System_Object_System_IntPtr_
+  commentId: M:Microsoft.AspNetCore.Blazor.RenderFragment`1.#ctor(System.Object,System.IntPtr)
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>.RenderFragment(System.Object, System.IntPtr)
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T).RenderFragment(System.Object, System.IntPtr)
+  nameWithType: RenderFragment<T>.RenderFragment(Object, IntPtr)
+  nameWithType.vb: RenderFragment(Of T).RenderFragment(Object, IntPtr)
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1.#ctor*
+  name: RenderFragment
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html#Microsoft_AspNetCore_Blazor_RenderFragment_1__ctor_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.RenderFragment`1.#ctor
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>.RenderFragment
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T).RenderFragment
+  nameWithType: RenderFragment<T>.RenderFragment
+  nameWithType.vb: RenderFragment(Of T).RenderFragment
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1.BeginInvoke(`0,System.AsyncCallback,System.Object)
+  name: BeginInvoke(T, AsyncCallback, Object)
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html#Microsoft_AspNetCore_Blazor_RenderFragment_1_BeginInvoke__0_System_AsyncCallback_System_Object_
+  commentId: M:Microsoft.AspNetCore.Blazor.RenderFragment`1.BeginInvoke(`0,System.AsyncCallback,System.Object)
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>.BeginInvoke(T, System.AsyncCallback, System.Object)
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T).BeginInvoke(T, System.AsyncCallback, System.Object)
+  nameWithType: RenderFragment<T>.BeginInvoke(T, AsyncCallback, Object)
+  nameWithType.vb: RenderFragment(Of T).BeginInvoke(T, AsyncCallback, Object)
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1.BeginInvoke*
+  name: BeginInvoke
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html#Microsoft_AspNetCore_Blazor_RenderFragment_1_BeginInvoke_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.RenderFragment`1.BeginInvoke
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>.BeginInvoke
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T).BeginInvoke
+  nameWithType: RenderFragment<T>.BeginInvoke
+  nameWithType.vb: RenderFragment(Of T).BeginInvoke
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html#Microsoft_AspNetCore_Blazor_RenderFragment_1_EndInvoke_System_IAsyncResult_
+  commentId: M:Microsoft.AspNetCore.Blazor.RenderFragment`1.EndInvoke(System.IAsyncResult)
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>.EndInvoke(System.IAsyncResult)
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T).EndInvoke(System.IAsyncResult)
+  nameWithType: RenderFragment<T>.EndInvoke(IAsyncResult)
+  nameWithType.vb: RenderFragment(Of T).EndInvoke(IAsyncResult)
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1.EndInvoke*
+  name: EndInvoke
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html#Microsoft_AspNetCore_Blazor_RenderFragment_1_EndInvoke_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.RenderFragment`1.EndInvoke
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>.EndInvoke
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T).EndInvoke
+  nameWithType: RenderFragment<T>.EndInvoke
+  nameWithType.vb: RenderFragment(Of T).EndInvoke
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1.Invoke(`0)
+  name: Invoke(T)
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html#Microsoft_AspNetCore_Blazor_RenderFragment_1_Invoke__0_
+  commentId: M:Microsoft.AspNetCore.Blazor.RenderFragment`1.Invoke(`0)
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>.Invoke(T)
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T).Invoke(T)
+  nameWithType: RenderFragment<T>.Invoke(T)
+  nameWithType.vb: RenderFragment(Of T).Invoke(T)
+- uid: Microsoft.AspNetCore.Blazor.RenderFragment`1.Invoke*
+  name: Invoke
+  href: api/Microsoft.AspNetCore.Blazor.RenderFragment-1.html#Microsoft_AspNetCore_Blazor_RenderFragment_1_Invoke_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.RenderFragment`1.Invoke
+  fullName: Microsoft.AspNetCore.Blazor.RenderFragment<T>.Invoke
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderFragment(Of T).Invoke
+  nameWithType: RenderFragment<T>.Invoke
+  nameWithType.vb: RenderFragment(Of T).Invoke
 - uid: Microsoft.AspNetCore.Blazor.Rendering
   name: Microsoft.AspNetCore.Blazor.Rendering
   href: api/Microsoft.AspNetCore.Blazor.Rendering.html
@@ -2444,6 +2517,15 @@ references:
   commentId: Overload:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent
   fullName: Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent
   nameWithType: RenderTreeBuilder.AddContent
+- uid: Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent``1(System.Int32,Microsoft.AspNetCore.Blazor.RenderFragment{``0},``0)
+  name: AddContent<T>(Int32, RenderFragment<T>, T)
+  href: api/Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.html#Microsoft_AspNetCore_Blazor_RenderTree_RenderTreeBuilder_AddContent__1_System_Int32_Microsoft_AspNetCore_Blazor_RenderFragment___0____0_
+  commentId: M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent``1(System.Int32,Microsoft.AspNetCore.Blazor.RenderFragment{``0},``0)
+  name.vb: AddContent(Of T)(Int32, RenderFragment(Of T), T)
+  fullName: Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent<T>(System.Int32, Microsoft.AspNetCore.Blazor.RenderFragment<T>, T)
+  fullName.vb: Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent(Of T)(System.Int32, Microsoft.AspNetCore.Blazor.RenderFragment(Of T), T)
+  nameWithType: RenderTreeBuilder.AddContent<T>(Int32, RenderFragment<T>, T)
+  nameWithType.vb: RenderTreeBuilder.AddContent(Of T)(Int32, RenderFragment(Of T), T)
 - uid: Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddElementReferenceCapture(System.Int32,System.Action{Microsoft.AspNetCore.Blazor.ElementRef})
   name: AddElementReferenceCapture(Int32, Action<ElementRef>)
   href: api/Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.html#Microsoft_AspNetCore_Blazor_RenderTree_RenderTreeBuilder_AddElementReferenceCapture_System_Int32_System_Action_Microsoft_AspNetCore_Blazor_ElementRef__
@@ -3011,6 +3093,75 @@ references:
   commentId: N:Microsoft.AspNetCore.Blazor.Server
   fullName: Microsoft.AspNetCore.Blazor.Server
   nameWithType: Microsoft.AspNetCore.Blazor.Server
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub
+  name: BlazorHub
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html
+  commentId: T:Microsoft.AspNetCore.Blazor.Server.BlazorHub
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub
+  nameWithType: BlazorHub
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.#ctor(Microsoft.Extensions.Logging.ILogger{Microsoft.AspNetCore.Blazor.Server.BlazorHub},System.IServiceProvider)
+  name: BlazorHub(ILogger<BlazorHub>, IServiceProvider)
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub__ctor_Microsoft_Extensions_Logging_ILogger_Microsoft_AspNetCore_Blazor_Server_BlazorHub__System_IServiceProvider_
+  commentId: M:Microsoft.AspNetCore.Blazor.Server.BlazorHub.#ctor(Microsoft.Extensions.Logging.ILogger{Microsoft.AspNetCore.Blazor.Server.BlazorHub},System.IServiceProvider)
+  name.vb: BlazorHub(ILogger(Of BlazorHub), IServiceProvider)
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.BlazorHub(Microsoft.Extensions.Logging.ILogger<Microsoft.AspNetCore.Blazor.Server.BlazorHub>, System.IServiceProvider)
+  fullName.vb: Microsoft.AspNetCore.Blazor.Server.BlazorHub.BlazorHub(Microsoft.Extensions.Logging.ILogger(Of Microsoft.AspNetCore.Blazor.Server.BlazorHub), System.IServiceProvider)
+  nameWithType: BlazorHub.BlazorHub(ILogger<BlazorHub>, IServiceProvider)
+  nameWithType.vb: BlazorHub.BlazorHub(ILogger(Of BlazorHub), IServiceProvider)
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.#ctor*
+  name: BlazorHub
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub__ctor_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.Server.BlazorHub.#ctor
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.BlazorHub
+  nameWithType: BlazorHub.BlazorHub
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.BeginInvokeDotNetFromJS(System.String,System.String,System.String,System.Int64,System.String)
+  name: BeginInvokeDotNetFromJS(String, String, String, Int64, String)
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub_BeginInvokeDotNetFromJS_System_String_System_String_System_String_System_Int64_System_String_
+  commentId: M:Microsoft.AspNetCore.Blazor.Server.BlazorHub.BeginInvokeDotNetFromJS(System.String,System.String,System.String,System.Int64,System.String)
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.BeginInvokeDotNetFromJS(System.String, System.String, System.String, System.Int64, System.String)
+  nameWithType: BlazorHub.BeginInvokeDotNetFromJS(String, String, String, Int64, String)
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.BeginInvokeDotNetFromJS*
+  name: BeginInvokeDotNetFromJS
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub_BeginInvokeDotNetFromJS_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.Server.BlazorHub.BeginInvokeDotNetFromJS
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.BeginInvokeDotNetFromJS
+  nameWithType: BlazorHub.BeginInvokeDotNetFromJS
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.DefaultPath
+  name: DefaultPath
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub_DefaultPath
+  commentId: P:Microsoft.AspNetCore.Blazor.Server.BlazorHub.DefaultPath
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.DefaultPath
+  nameWithType: BlazorHub.DefaultPath
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.DefaultPath*
+  name: DefaultPath
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub_DefaultPath_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.Server.BlazorHub.DefaultPath
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.DefaultPath
+  nameWithType: BlazorHub.DefaultPath
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.OnDisconnectedAsync(System.Exception)
+  name: OnDisconnectedAsync(Exception)
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub_OnDisconnectedAsync_System_Exception_
+  commentId: M:Microsoft.AspNetCore.Blazor.Server.BlazorHub.OnDisconnectedAsync(System.Exception)
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.OnDisconnectedAsync(System.Exception)
+  nameWithType: BlazorHub.OnDisconnectedAsync(Exception)
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.OnDisconnectedAsync*
+  name: OnDisconnectedAsync
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub_OnDisconnectedAsync_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.Server.BlazorHub.OnDisconnectedAsync
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.OnDisconnectedAsync
+  nameWithType: BlazorHub.OnDisconnectedAsync
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.StartCircuit(System.String,System.String)
+  name: StartCircuit(String, String)
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub_StartCircuit_System_String_System_String_
+  commentId: M:Microsoft.AspNetCore.Blazor.Server.BlazorHub.StartCircuit(System.String,System.String)
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.StartCircuit(System.String, System.String)
+  nameWithType: BlazorHub.StartCircuit(String, String)
+- uid: Microsoft.AspNetCore.Blazor.Server.BlazorHub.StartCircuit*
+  name: StartCircuit
+  href: api/Microsoft.AspNetCore.Blazor.Server.BlazorHub.html#Microsoft_AspNetCore_Blazor_Server_BlazorHub_StartCircuit_
+  commentId: Overload:Microsoft.AspNetCore.Blazor.Server.BlazorHub.StartCircuit
+  fullName: Microsoft.AspNetCore.Blazor.Server.BlazorHub.StartCircuit
+  nameWithType: BlazorHub.StartCircuit
 - uid: Microsoft.AspNetCore.Blazor.Server.Circuits
   name: Microsoft.AspNetCore.Blazor.Server.Circuits
   href: api/Microsoft.AspNetCore.Blazor.Server.Circuits.html
@@ -3131,24 +3282,6 @@ references:
   commentId: F:Microsoft.AspNetCore.Blazor.Server.WasmMediaTypeNames.Application.Wasm
   fullName: Microsoft.AspNetCore.Blazor.Server.WasmMediaTypeNames.Application.Wasm
   nameWithType: WasmMediaTypeNames.Application.Wasm
-- uid: Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions
-  name: ServerSideBlazorOptions
-  href: api/Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.html
-  commentId: T:Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions
-  fullName: Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions
-  nameWithType: ServerSideBlazorOptions
-- uid: Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.#ctor
-  name: ServerSideBlazorOptions()
-  href: api/Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.html#Microsoft_AspNetCore_Blazor_ServerSideBlazorOptions__ctor
-  commentId: M:Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.#ctor
-  fullName: Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.ServerSideBlazorOptions()
-  nameWithType: ServerSideBlazorOptions.ServerSideBlazorOptions()
-- uid: Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.#ctor*
-  name: ServerSideBlazorOptions
-  href: api/Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.html#Microsoft_AspNetCore_Blazor_ServerSideBlazorOptions__ctor_
-  commentId: Overload:Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.#ctor
-  fullName: Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions.ServerSideBlazorOptions
-  nameWithType: ServerSideBlazorOptions.ServerSideBlazorOptions
 - uid: Microsoft.AspNetCore.Blazor.Services
   name: Microsoft.AspNetCore.Blazor.Services
   href: api/Microsoft.AspNetCore.Blazor.Services.html
@@ -4730,21 +4863,12 @@ references:
   commentId: T:Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions
   fullName: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions
   nameWithType: ServerSideBlazorApplicationBuilderExtensions
-- uid: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions,System.Action{Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder})
-  name: UseServerSideBlazor(IApplicationBuilder, BlazorOptions, Action<IBlazorApplicationBuilder>)
-  href: api/Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_BlazorOptions_System_Action_Microsoft_AspNetCore_Blazor_Builder_IBlazorApplicationBuilder__
-  commentId: M:Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions,System.Action{Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder})
-  name.vb: UseServerSideBlazor(IApplicationBuilder, BlazorOptions, Action(Of IBlazorApplicationBuilder))
-  fullName: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Builder.BlazorOptions, System.Action<Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder>)
-  fullName.vb: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Builder.BlazorOptions, System.Action(Of Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder))
-  nameWithType: ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(IApplicationBuilder, BlazorOptions, Action<IBlazorApplicationBuilder>)
-  nameWithType.vb: ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(IApplicationBuilder, BlazorOptions, Action(Of IBlazorApplicationBuilder))
-- uid: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Type)
-  name: UseServerSideBlazor(IApplicationBuilder, Type)
-  href: api/Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Type_
-  commentId: M:Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Type)
-  fullName: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder, System.Type)
-  nameWithType: ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(IApplicationBuilder, Type)
+- uid: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)
+  name: UseServerSideBlazor(IApplicationBuilder, BlazorOptions)
+  href: api/Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_BlazorOptions_
+  commentId: M:Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)
+  fullName: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Builder.BlazorOptions)
+  nameWithType: ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(IApplicationBuilder, BlazorOptions)
 - uid: Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor*
   name: UseServerSideBlazor
   href: api/Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_
@@ -4778,30 +4902,12 @@ references:
   commentId: M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   fullName: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   nameWithType: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(IServiceCollection)
-- uid: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})
-  name: AddServerSideBlazor(IServiceCollection, Action<ServerSideBlazorOptions>)
-  href: api/Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.html#Microsoft_Extensions_DependencyInjection_ServerSideBlazorServiceCollectionExtensions_AddServerSideBlazor_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Blazor_ServerSideBlazorOptions__
-  commentId: M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})
-  name.vb: AddServerSideBlazor(IServiceCollection, Action(Of ServerSideBlazorOptions))
-  fullName: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions>)
-  fullName.vb: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions))
-  nameWithType: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(IServiceCollection, Action<ServerSideBlazorOptions>)
-  nameWithType.vb: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(IServiceCollection, Action(Of ServerSideBlazorOptions))
 - uid: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)
   name: AddServerSideBlazor(IServiceCollection, Type)
   href: api/Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.html#Microsoft_Extensions_DependencyInjection_ServerSideBlazorServiceCollectionExtensions_AddServerSideBlazor_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Type_
   commentId: M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)
   fullName: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Type)
   nameWithType: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(IServiceCollection, Type)
-- uid: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})
-  name: AddServerSideBlazor(IServiceCollection, Type, Action<ServerSideBlazorOptions>)
-  href: api/Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.html#Microsoft_Extensions_DependencyInjection_ServerSideBlazorServiceCollectionExtensions_AddServerSideBlazor_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Type_System_Action_Microsoft_AspNetCore_Blazor_ServerSideBlazorOptions__
-  commentId: M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})
-  name.vb: AddServerSideBlazor(IServiceCollection, Type, Action(Of ServerSideBlazorOptions))
-  fullName: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Type, System.Action<Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions>)
-  fullName.vb: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Type, System.Action(Of Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions))
-  nameWithType: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(IServiceCollection, Type, Action<ServerSideBlazorOptions>)
-  nameWithType.vb: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(IServiceCollection, Type, Action(Of ServerSideBlazorOptions))
 - uid: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor*
   name: AddServerSideBlazor
   href: api/Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.html#Microsoft_Extensions_DependencyInjection_ServerSideBlazorServiceCollectionExtensions_AddServerSideBlazor_
@@ -4817,15 +4923,6 @@ references:
   fullName.vb: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Of TStartup)(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   nameWithType: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor<TStartup>(IServiceCollection)
   nameWithType.vb: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Of TStartup)(IServiceCollection)
-- uid: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})
-  name: AddServerSideBlazor<TStartup>(IServiceCollection, Action<ServerSideBlazorOptions>)
-  href: api/Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.html#Microsoft_Extensions_DependencyInjection_ServerSideBlazorServiceCollectionExtensions_AddServerSideBlazor__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Blazor_ServerSideBlazorOptions__
-  commentId: M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})
-  name.vb: AddServerSideBlazor(Of TStartup)(IServiceCollection, Action(Of ServerSideBlazorOptions))
-  fullName: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor<TStartup>(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions>)
-  fullName.vb: Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Of TStartup)(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions))
-  nameWithType: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor<TStartup>(IServiceCollection, Action<ServerSideBlazorOptions>)
-  nameWithType.vb: ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Of TStartup)(IServiceCollection, Action(Of ServerSideBlazorOptions))
 - uid: Microsoft.JSInterop
   name: Microsoft.JSInterop
   href: api/Microsoft.JSInterop.html
@@ -5243,3 +5340,93 @@ references:
   commentId: Overload:Microsoft.JSInterop.JSRuntimeBase.UntrackObjectRef
   fullName: Microsoft.JSInterop.JSRuntimeBase.UntrackObjectRef
   nameWithType: JSRuntimeBase.UntrackObjectRef
+- uid: Mono.WebAssembly.Interop
+  name: Mono.WebAssembly.Interop
+  href: api/Mono.WebAssembly.Interop.html
+  commentId: N:Mono.WebAssembly.Interop
+  fullName: Mono.WebAssembly.Interop
+  nameWithType: Mono.WebAssembly.Interop
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime
+  name: MonoWebAssemblyJSRuntime
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html
+  commentId: T:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime
+  nameWithType: MonoWebAssemblyJSRuntime
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.#ctor
+  name: MonoWebAssemblyJSRuntime()
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime__ctor
+  commentId: M:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.#ctor
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.MonoWebAssemblyJSRuntime()
+  nameWithType: MonoWebAssemblyJSRuntime.MonoWebAssemblyJSRuntime()
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.#ctor*
+  name: MonoWebAssemblyJSRuntime
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime__ctor_
+  commentId: Overload:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.#ctor
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.MonoWebAssemblyJSRuntime
+  nameWithType: MonoWebAssemblyJSRuntime.MonoWebAssemblyJSRuntime
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.BeginInvokeJS(System.Int64,System.String,System.String)
+  name: BeginInvokeJS(Int64, String, String)
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_BeginInvokeJS_System_Int64_System_String_System_String_
+  commentId: M:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.BeginInvokeJS(System.Int64,System.String,System.String)
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.BeginInvokeJS(System.Int64, System.String, System.String)
+  nameWithType: MonoWebAssemblyJSRuntime.BeginInvokeJS(Int64, String, String)
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.BeginInvokeJS*
+  name: BeginInvokeJS
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_BeginInvokeJS_
+  commentId: Overload:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.BeginInvokeJS
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.BeginInvokeJS
+  nameWithType: MonoWebAssemblyJSRuntime.BeginInvokeJS
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeJS(System.String,System.String)
+  name: InvokeJS(String, String)
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_InvokeJS_System_String_System_String_
+  commentId: M:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeJS(System.String,System.String)
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeJS(System.String, System.String)
+  nameWithType: MonoWebAssemblyJSRuntime.InvokeJS(String, String)
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeJS*
+  name: InvokeJS
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_InvokeJS_
+  commentId: Overload:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeJS
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeJS
+  nameWithType: MonoWebAssemblyJSRuntime.InvokeJS
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled*
+  name: InvokeUnmarshalled
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_InvokeUnmarshalled_
+  commentId: Overload:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled
+  nameWithType: MonoWebAssemblyJSRuntime.InvokeUnmarshalled
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled``1(System.String)
+  name: InvokeUnmarshalled<TRes>(String)
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_InvokeUnmarshalled__1_System_String_
+  commentId: M:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled``1(System.String)
+  name.vb: InvokeUnmarshalled(Of TRes)(String)
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled<TRes>(System.String)
+  fullName.vb: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled(Of TRes)(System.String)
+  nameWithType: MonoWebAssemblyJSRuntime.InvokeUnmarshalled<TRes>(String)
+  nameWithType.vb: MonoWebAssemblyJSRuntime.InvokeUnmarshalled(Of TRes)(String)
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled``2(System.String,``0)
+  name: InvokeUnmarshalled<T0, TRes>(String, T0)
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_InvokeUnmarshalled__2_System_String___0_
+  commentId: M:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled``2(System.String,``0)
+  name.vb: InvokeUnmarshalled(Of T0, TRes)(String, T0)
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled<T0, TRes>(System.String, T0)
+  fullName.vb: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled(Of T0, TRes)(System.String, T0)
+  nameWithType: MonoWebAssemblyJSRuntime.InvokeUnmarshalled<T0, TRes>(String, T0)
+  nameWithType.vb: MonoWebAssemblyJSRuntime.InvokeUnmarshalled(Of T0, TRes)(String, T0)
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled``3(System.String,``0,``1)
+  name: InvokeUnmarshalled<T0, T1, TRes>(String, T0, T1)
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_InvokeUnmarshalled__3_System_String___0___1_
+  commentId: M:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled``3(System.String,``0,``1)
+  name.vb: InvokeUnmarshalled(Of T0, T1, TRes)(String, T0, T1)
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled<T0, T1, TRes>(System.String, T0, T1)
+  fullName.vb: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled(Of T0, T1, TRes)(System.String, T0, T1)
+  nameWithType: MonoWebAssemblyJSRuntime.InvokeUnmarshalled<T0, T1, TRes>(String, T0, T1)
+  nameWithType.vb: MonoWebAssemblyJSRuntime.InvokeUnmarshalled(Of T0, T1, TRes)(String, T0, T1)
+- uid: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled``4(System.String,``0,``1,``2)
+  name: InvokeUnmarshalled<T0, T1, T2, TRes>(String, T0, T1, T2)
+  href: api/Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.html#Mono_WebAssembly_Interop_MonoWebAssemblyJSRuntime_InvokeUnmarshalled__4_System_String___0___1___2_
+  commentId: M:Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled``4(System.String,``0,``1,``2)
+  name.vb: InvokeUnmarshalled(Of T0, T1, T2, TRes)(String, T0, T1, T2)
+  fullName: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled<T0, T1, T2, TRes>(System.String, T0, T1, T2)
+  fullName.vb: Mono.WebAssembly.Interop.MonoWebAssemblyJSRuntime.InvokeUnmarshalled(Of T0, T1, T2, TRes)(System.String, T0, T1, T2)
+  nameWithType: MonoWebAssemblyJSRuntime.InvokeUnmarshalled<T0, T1, T2, TRes>(String, T0, T1, T2)
+  nameWithType.vb: MonoWebAssemblyJSRuntime.InvokeUnmarshalled(Of T0, T1, T2, TRes)(String, T0, T1, T2)

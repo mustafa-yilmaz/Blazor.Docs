@@ -98,7 +98,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void UseBlazor(this IApplicationBuilder app, BlazorOptions options)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IApplicationBuilder UseBlazor(this IApplicationBuilder app, BlazorOptions options)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -113,12 +113,30 @@
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td></td>
+        <td><p>The <span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span>.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Microsoft.AspNetCore.Builder.BlazorOptions.html">BlazorOptions</a></td>
         <td><span class="parametername">options</span></td>
-        <td></td>
+        <td><p>Options to configure the middleware.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><p>The <span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -131,7 +149,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void UseBlazor&lt;TProgram&gt;(this IApplicationBuilder app)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IApplicationBuilder UseBlazor&lt;TProgram&gt;(this IApplicationBuilder app)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -146,7 +164,24 @@
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td></td>
+        <td><p>The <span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><p>The <span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -73,7 +73,8 @@
   
   <h1 id="Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions" data-uid="Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions" class="text-break">Class ServerSideBlazorApplicationBuilderExtensions
   </h1>
-  <div class="markdown level0 summary"><p>Extension methods to configure an <span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span> for Server-Side Blazor.</p>
+  <div class="markdown level0 summary"><p>Extension methods to configure an <span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span> for Server-Side Blazor.
+These are just shorthand for combining UseSignalR with UseBlazor.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -92,13 +93,13 @@
   
   
   <a id="Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_" data-uid="Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_BlazorOptions_System_Action_Microsoft_AspNetCore_Blazor_Builder_IBlazorApplicationBuilder__" data-uid="Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions,System.Action{Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder})">UseServerSideBlazor(IApplicationBuilder, BlazorOptions, Action&lt;IBlazorApplicationBuilder&gt;)</h4>
-  <div class="markdown level1 summary"><p>Registers middleware for Server-Side Blazor.</p>
+  <h4 id="Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_BlazorOptions_" data-uid="Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)">UseServerSideBlazor(IApplicationBuilder, BlazorOptions)</h4>
+  <div class="markdown level1 summary"><p>Registers Server-Side Blazor in the pipeline.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IApplicationBuilder UseServerSideBlazor(this IApplicationBuilder builder, BlazorOptions options, Action&lt;IBlazorApplicationBuilder&gt; startupAction)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IApplicationBuilder UseServerSideBlazor(this IApplicationBuilder builder, BlazorOptions options)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -120,63 +121,6 @@
         <td><a class="xref" href="Microsoft.AspNetCore.Builder.BlazorOptions.html">BlazorOptions</a></td>
         <td><span class="parametername">options</span></td>
         <td><p>A <a class="xref" href="Microsoft.AspNetCore.Builder.BlazorOptions.html">BlazorOptions</a> instance used to configure the Blazor file provider.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder.html">IBlazorApplicationBuilder</a>&gt;</td>
-        <td><span class="parametername">startupAction</span></td>
-        <td><p>A delegate used to configure the renderer.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
-        <td><p>The <span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_" data-uid="Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor*"></a>
-  <h4 id="Microsoft_AspNetCore_Builder_ServerSideBlazorApplicationBuilderExtensions_UseServerSideBlazor_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Type_" data-uid="Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Type)">UseServerSideBlazor(IApplicationBuilder, Type)</h4>
-  <div class="markdown level1 summary"><p>Registers Server-Side Blazor in the pipeline.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IApplicationBuilder UseServerSideBlazor(this IApplicationBuilder builder, Type startupType)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
-        <td><span class="parametername">builder</span></td>
-        <td><p>The <span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Type</span></td>
-        <td><span class="parametername">startupType</span></td>
-        <td><p>A Blazor startup type.</p>
 </td>
       </tr>
     </tbody>
