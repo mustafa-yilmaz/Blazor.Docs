@@ -8,7 +8,7 @@
     <title>Blazor components </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Blazor components ">
-    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="generator" content="docfx 2.40.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -231,6 +231,17 @@
 
 @functions {
     void CheckboxChanged()
+    {
+        ...
+    }
+}
+</code></pre><p>Event handlers can also be asynchronous and return a <code>Task</code>. There&#39;s no need to manually call <code>StateHasChanged()</code>. Exceptions are logged when they occur.</p>
+<pre><code class="lang-cshtml">&lt;button class=&quot;btn btn-primary&quot; onclick=&quot;@UpdateHeading&quot;&gt;
+    Update heading
+&lt;/button&gt;
+
+@functions {
+    async Task UpdateHeading(UIMouseEventArgs e)
     {
         ...
     }

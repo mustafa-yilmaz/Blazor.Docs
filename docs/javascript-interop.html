@@ -8,7 +8,7 @@
     <title>Blazor JavaScript interop </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Blazor JavaScript interop ">
-    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="generator" content="docfx 2.40.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -75,25 +75,117 @@
 <p>A Blazor app can invoke JavaScript functions from .NET and .NET methods from JavaScript code.</p>
 <h2 id="invoke-javascript-functions-from-net-methods">Invoke JavaScript functions from .NET methods</h2>
 <p>There are times when Blazor .NET code is required to call a JavaScript function. For example, a JavaScript call can expose browser capabilities or functionality from a JavaScript library to the Blazor app.</p>
-<p>To call into JavaScript from .NET, use the <code>IJSRuntime</code> abstraction, which is accessible from <code>JSRuntime.Current</code>. The <code>InvokeAsync&lt;T&gt;</code> method on <code>IJSRuntime</code> takes an identifier for the JavaScript function you wish to invoke along with any number of JSON serializable arguments. The function identifier is relative to the global scope (<code>window</code>). For example if you wish to call <code>window.someScope.someFunction</code>, the identifier is <code>someScope.someFunction</code>. There&#39;s no longer any need to register the function before it&#39;s called. The return type <code>T</code> must also be JSON serializable.</p>
-<p><em>exampleJsInterop.js</em>:</p>
-<pre><code class="lang-javascript">window.exampleJsFunctions = {
-  showPrompt: function (message) {
-    return prompt(message, &#39;Type anything here&#39;);
+<p>To call into JavaScript from .NET, use the <code>IJSRuntime</code> abstraction, which is accessible from <code>JSRuntime.Current</code>. The <code>InvokeAsync&lt;T&gt;</code> method on <code>IJSRuntime</code> takes an identifier for the JavaScript function you wish to invoke along with any number of JSON-serializable arguments. The function identifier is relative to the global scope (<code>window</code>). If you wish to call <code>window.someScope.someFunction</code>, the identifier is <code>someScope.someFunction</code>. There&#39;s no need to register the function before it&#39;s called. The return type <code>T</code> must also be JSON serializable.</p>
+<p>In the sample app, two JavaScript functions are available to the client-side app that interact with the DOM to receive user input and display a welcome message:</p>
+<ul>
+<li><code>showPrompt</code> &ndash; Produces a prompt to accept user input (the user&#39;s name) and returns the name to the caller.</li>
+<li><code>displayWelcome</code> &ndash; Assigns a welcome message from the caller to a DOM object with an <code>id</code> of <code>welcome</code>.</li>
+</ul>
+<p><em>wwwroot/exampleJsInterop.js</em>:</p>
+<pre><code class="lang-javascript" highlight-lines="2-7">window.exampleJsFunctions = {
+  showPrompt: function (text) {
+    return prompt(text, &#39;Type your name here&#39;);
+  },
+  displayWelcome: function (welcomeMessage) {
+    document.getElementById(&#39;welcome&#39;).innerText = welcomeMessage;
+  },
+    returnArrayAsyncJs: function () {
+      DotNet.invokeMethodAsync(&#39;BlazorSample&#39;, &#39;ReturnArrayAsync&#39;)
+        .then(data =&gt; {
+          data.push(4);
+            console.log(data);
+    })
+  },
+  sayHello: function (dotnetHelper) {
+    return dotnetHelper.invokeMethodAsync(&#39;SayHello&#39;)
+      .then(r =&gt; console.log(r));
   }
 };
-</code></pre><p><em>ExampleJsInterop.cs</em>:</p>
-<pre><code class="lang-csharp">public class ExampleJsInterop
+</code></pre><p>Place the <code>&lt;script&gt;</code> tag that references the JavaScript file in the <em>wwwroot/index.html</em> file:</p>
+<pre><code class="lang-html" highlight-lines="16">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+    &lt;title&gt;BlazorSample&lt;/title&gt;
+    &lt;base href=&quot;/&quot; /&gt;
+    &lt;link href=&quot;css/bootstrap/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link href=&quot;css/site.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;app&gt;Loading...&lt;/app&gt;
+
+    &lt;script src=&quot;css/bootstrap/bootstrap-native.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;_framework/blazor.webassembly.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;exampleJsInterop.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>Don&#39;t place a script tag in a component file because the script tag can&#39;t be updated dynamically.</p>
+<p>.NET methods interop with the JavaScript functions by calling <code>InvokeAsync&lt;T&gt;</code> method on <code>IJSRuntime</code>.</p>
+<p>The sample app uses a pair of C# methods, <code>Prompt</code> and <code>Display</code>, to invoke the <code>showPrompt</code> and <code>displayWelcome</code> JavaScript functions:</p>
+<p><em>JsInteropClasses/ExampleJsInterop.cs</em>:</p>
+<pre><code class="lang-csharp" highlight-lines="6-8,14-16">public class ExampleJsInterop
 {
-    public static Task&lt;string&gt; Prompt(string message)
+    public static Task&lt;string&gt; Prompt(string text)
     {
-        // Implemented in exampleJsInterop.js
+        // showPrompt is implemented in wwwroot/exampleJsInterop.js
         return JSRuntime.Current.InvokeAsync&lt;string&gt;(
             &quot;exampleJsFunctions.showPrompt&quot;,
-            message);
+            text);
+    }
+
+    public static Task&lt;string&gt; Display(string welcomeMessage)
+    {
+        // displayWelcome is implemented in wwwroot/exampleJsInterop.js
+        return JSRuntime.Current.InvokeAsync&lt;string&gt;(
+            &quot;exampleJsFunctions.displayWelcome&quot;,
+            welcomeMessage);
+    }
+    
+    public static Task CallHelloHelperSayHello(string name)
+    {
+        // sayHello is implemented in wwwroot/exampleJsInterop.js
+        return JSRuntime.Current.InvokeAsync&lt;object&gt;(
+            &quot;exampleJsFunctions.sayHello&quot;,
+            new DotNetObjectRef(new HelloHelper(name)));
     }
 }
-</code></pre><p>The <code>IJSRuntime</code> abstraction is asynchronous to allow for out-of-process scenarios. If the app runs in-process and you want to invoke a JavaScript function synchronously, downcast to <code>IJSInProcessRuntime</code> and call <code>Invoke&lt;T&gt;</code> instead. We recommend that most JavaScript interop libraries use the async APIs to ensure the libraries are available in all Blazor scenarios, client-side or server-side.</p>
+</code></pre><p>The <code>IJSRuntime</code> abstraction is asynchronous to allow for server-side scenarios. If the app runs client-side and you want to invoke a JavaScript function synchronously, downcast to <code>IJSInProcessRuntime</code> and call <code>Invoke&lt;T&gt;</code> instead. We recommend that most JavaScript interop libraries use the async APIs to ensure the libraries are available in all Blazor scenarios, client-side or server-side.</p>
+<p>The sample app includes a component to demonstrate JS interop. The component:</p>
+<ul>
+<li>Receives user input via a JS prompt.</li>
+<li>Returns the text to the component for processing.</li>
+<li>Calls a second JS function that interacts with the DOM to display a welcome message.</li>
+</ul>
+<p><em>Pages/JSInterop.cshtml</em>:</p>
+<pre><code class="lang-cshtml" highlight-lines="2-3,9-11,13,16-20">@page &quot;/JSInterop&quot;
+@using BlazorSample.JsInteropClasses
+@using Microsoft.JSInterop;
+
+&lt;h1&gt;JavaScript Interop&lt;/h1&gt;
+
+&lt;h2&gt;Invoke JavaScript functions from .NET methods&lt;/h2&gt;
+
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; onclick=&quot;@TriggerJsPrompt&quot;&gt;
+    Trigger JavaScript Prompt
+&lt;/button&gt;
+
+&lt;h3 id=&quot;welcome&quot; style=&quot;color:green;font-style:italic&quot;&gt;&lt;/h3&gt;
+
+@functions {
+    public async void TriggerJsPrompt()
+    {
+        var name = await ExampleJsInterop.Prompt(&quot;What&#39;s your name?&quot;);
+        await ExampleJsInterop.Display($&quot;Hello {name}! Welcome to Blazor!&quot;);
+    }
+}
+</code></pre><ol>
+<li>When <code>TriggerJsPrompt</code> is executed by selecting the component&#39;s <strong>Trigger JavaScript Prompt</strong> button, the <code>ExampleJsInterop.Prompt</code> method in C# code is called.</li>
+<li>The <code>Prompt</code> method executes the JavaScript <code>showPrompt</code> function provided in the <em>wwwroot/exampleJsInterop.js</em> file.</li>
+<li>The <code>showPrompt</code> function accepts user input (the user&#39;s name), which is HTML-encoded and returned to the <code>Prompt</code> method and ultimately back to the component. The component stores the user&#39;s name in a local variable, <code>name</code>.</li>
+<li>The string stored in <code>name</code> is incorporated into a welcome message, which is passed to a second C# method, <code>ExampleJsInterop.Display</code>.</li>
+<li><code>Display</code> calls a JavaScript function, <code>displayWelcome</code>, which renders the welcome message into a heading tag.</li>
+</ol>
 <h2 id="capture-references-to-elements">Capture references to elements</h2>
 <p>Some <a class="xref" href="javascript-interop.html">JavaScript interop</a> scenarios require references to HTML elements. For example, a UI library may require an element reference for initialization, or you might need to call command-like APIs on an element, such as <code>focus</code> or <code>play</code>.</p>
 <p>You can capture references to HTML elements in a component by adding a <code>ref</code> attribute to the HTML element and then defining a field of type <code>ElementRef</code> whose name matches the value of the <code>ref</code> attribute.</p>
@@ -145,38 +237,113 @@ namespace MyLib
 </code></pre><div class="IMPORTANT"><h5>Important</h5><p>The <code>username</code> variable is only populated after the component renders and its output includes the <code>&lt;input&gt;</code> element. If you try to pass an unpopulated <code>ElementRef</code> to JavaScript code, the JavaScript code receives <code>null</code>. To manipulate element references after the component has finished rendering (to set the initial focus on an element) use the <code>OnAfterRenderAsync</code> or <code>OnAfterRender</code> <a class="xref" href="components/index.html#lifecycle-methods">component lifecycle methods</a>.</p>
 </div>
 <h2 id="invoke-net-methods-from-javascript-functions">Invoke .NET methods from JavaScript functions</h2>
-<p>To invoke a static .NET method from JavaScript, use the <code>DotNet.invokeMethod</code> or <code>DotNet.invokeMethodAsync</code> functions. Pass in the identifier of the static method you wish to call, the name of the assembly containing the function, and any arguments. Again, the async version is preferred to support out-of-process scenarios. To be invokable from JavaScript, the .NET method must be public, static, and decorated with <code>[JSInvokable]</code>. By default, the method identifier is the method name, but you can specify a different identifier using the <code>JSInvokableAttribute</code> constructor. Calling open generic methods isn&#39;t currently supported.</p>
-<p><em>JavaScriptInteroperable.cs</em>:</p>
-<pre><code class="lang-csharp">public class JavaScriptInvokable
-{
+<h3 id="static-net-method-call">Static .NET method call</h3>
+<p>To invoke a static .NET method from JavaScript, use the <code>DotNet.invokeMethod</code> or <code>DotNet.invokeMethodAsync</code> functions. Pass in the identifier of the static method you wish to call, the name of the assembly containing the function, and any arguments. Again, the async version is preferred to support server-side scenarios. To be invokable from JavaScript, the .NET method must be public, static, and decorated with <code>[JSInvokable]</code>. By default, the method identifier is the method name, but you can specify a different identifier using the <code>JSInvokableAttribute</code> constructor. Calling open generic methods isn&#39;t currently supported.</p>
+<p>The sample app includes a C# method to return an array of <code>int</code>s. The method is decorated with the <code>JSInvokable</code> attribute.</p>
+<p><em>Pages/JsInterop.cshtml</em>:</p>
+<pre><code class="lang-cshtml" highlight-lines="7-11">&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;
+        onclick=&quot;exampleJsFunctions.returnArrayAsyncJs()&quot;&gt;
+    Trigger .NET static method ReturnArrayAsync
+&lt;/button&gt;
+
+@functions {
     [JSInvokable]
     public static Task&lt;int[]&gt; ReturnArrayAsync()
     {
         return Task.FromResult(new int[] { 1, 2, 3 });
     }
 }
-</code></pre><p><em>dotnetInterop.js</em>:</p>
-<pre><code class="lang-javascript">DotNet.invokeMethodAsync(assemblyName, &#39;ReturnArrayAsync&#39;).then(data =&gt; ...)
-</code></pre><p>New in Blazor 0.5.0, you can also call .NET instance methods from JavaScript. To invoke a .NET instance method from JavaScript, first pass the .NET instance to JavaScript by wrapping it in a <code>DotNetObjectRef</code> instance. The .NET instance is passed by reference to JavaScript, and you can invoke .NET instance methods on the instance using the <code>invokeMethod</code> or <code>invokeMethodAsync</code> functions. The .NET instance can also be passed as an argument when invoking other .NET methods from JavaScript.</p>
-<p><em>ExampleJsInterop.cs</em>:</p>
-<pre><code class="lang-csharp">public class ExampleJsInterop
-{
-    public static Task SayHello(string name)
-    {
-        return JSRuntime.Current.InvokeAsync&lt;object&gt;(
-            &quot;exampleJsFunctions.sayHello&quot;, 
-            new DotNetObjectRef(new HelloHelper(name)));
-    }
-}
-</code></pre><p><em>exampleJsInterop.js</em>:</p>
-<pre><code class="lang-javascript">window.exampleJsFunctions = {
+</code></pre><p>JavaScript served to the client invokes the C# .NET method.</p>
+<p><em>wwwroot/exampleJsInterop.js</em>:</p>
+<pre><code class="lang-javascript" highlight-lines="8-12">window.exampleJsFunctions = {
+  showPrompt: function (text) {
+    return prompt(text, &#39;Type your name here&#39;);
+  },
+  displayWelcome: function (welcomeMessage) {
+    document.getElementById(&#39;welcome&#39;).innerText = welcomeMessage;
+  },
+    returnArrayAsyncJs: function () {
+      DotNet.invokeMethodAsync(&#39;BlazorSample&#39;, &#39;ReturnArrayAsync&#39;)
+        .then(data =&gt; {
+          data.push(4);
+            console.log(data);
+    })
+  },
   sayHello: function (dotnetHelper) {
     return dotnetHelper.invokeMethodAsync(&#39;SayHello&#39;)
       .then(r =&gt; console.log(r));
   }
 };
-</code></pre><p><em>HelloHelper.cs</em>:</p>
-<pre><code class="lang-csharp">public class HelloHelper
+</code></pre><p>When the <strong>Trigger .NET static method ReturnArrayAsync</strong> button is selected, examine the console output in the browser&#39;s web developer tools:</p>
+<pre><code class="lang-console">Array(4) [ 1, 2, 3, 4 ]
+</code></pre><p>The fourth array value is pushed to the array (<code>data.push(4);</code>) returned by <code>ReturnArrayAsync</code>.</p>
+<h3 id="instance-method-call">Instance method call</h3>
+<p>You can also call .NET instance methods from JavaScript. To invoke a .NET instance method from JavaScript, first pass the .NET instance to JavaScript by wrapping it in a <code>DotNetObjectRef</code> instance. The .NET instance is passed by reference to JavaScript, and you can invoke .NET instance methods on the instance using the <code>invokeMethod</code> or <code>invokeMethodAsync</code> functions. The .NET instance can also be passed as an argument when invoking other .NET methods from JavaScript.</p>
+<div class="NOTE"><h5>Note</h5><p>The sample app logs messages to the client-side console. For the following examples demonstrated by the sample app, examine the browser&#39;s console output in the browser&#39;s developer tools.</p>
+</div>
+<p>When the <strong>Trigger .NET instance method HelloHelper.SayHello</strong> button is selected, <code>ExampleJsInterop.CallHelloHelperSayHello</code> is called and passes a name, <code>Blazor</code>, to the method.</p>
+<p><em>Pages/JsInterop.cshtml</em>:</p>
+<pre><code class="lang-cshtml" highlight-lines="8">&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; onclick=&quot;@TriggerNetInstanceMethod&quot;&gt;
+    Trigger .NET instance method HelloHelper.SayHello
+&lt;/button&gt;
+
+@functions {
+    public async void TriggerNetInstanceMethod()
+    {
+        await ExampleJsInterop.CallHelloHelperSayHello(&quot;Blazor&quot;);
+    }
+}
+</code></pre><p><code>CallHelloHelperSayHello</code> invokes the JavaScript function <code>sayHello</code> with a new instance of <code>HelloHelper</code>.</p>
+<p><em>JsInteropClasses/ExampleJsInterop.cs</em>:</p>
+<pre><code class="lang-csharp" highlight-lines="19-25">public class ExampleJsInterop
+{
+    public static Task&lt;string&gt; Prompt(string text)
+    {
+        // showPrompt is implemented in wwwroot/exampleJsInterop.js
+        return JSRuntime.Current.InvokeAsync&lt;string&gt;(
+            &quot;exampleJsFunctions.showPrompt&quot;,
+            text);
+    }
+
+    public static Task&lt;string&gt; Display(string welcomeMessage)
+    {
+        // displayWelcome is implemented in wwwroot/exampleJsInterop.js
+        return JSRuntime.Current.InvokeAsync&lt;string&gt;(
+            &quot;exampleJsFunctions.displayWelcome&quot;,
+            welcomeMessage);
+    }
+    
+    public static Task CallHelloHelperSayHello(string name)
+    {
+        // sayHello is implemented in wwwroot/exampleJsInterop.js
+        return JSRuntime.Current.InvokeAsync&lt;object&gt;(
+            &quot;exampleJsFunctions.sayHello&quot;,
+            new DotNetObjectRef(new HelloHelper(name)));
+    }
+}
+</code></pre><p><em>wwwroot/exampleJsInterop.js</em>:</p>
+<pre><code class="lang-javascript" highlight-lines="15-17">window.exampleJsFunctions = {
+  showPrompt: function (text) {
+    return prompt(text, &#39;Type your name here&#39;);
+  },
+  displayWelcome: function (welcomeMessage) {
+    document.getElementById(&#39;welcome&#39;).innerText = welcomeMessage;
+  },
+    returnArrayAsyncJs: function () {
+      DotNet.invokeMethodAsync(&#39;BlazorSample&#39;, &#39;ReturnArrayAsync&#39;)
+        .then(data =&gt; {
+          data.push(4);
+            console.log(data);
+    })
+  },
+  sayHello: function (dotnetHelper) {
+    return dotnetHelper.invokeMethodAsync(&#39;SayHello&#39;)
+      .then(r =&gt; console.log(r));
+  }
+};
+</code></pre><p>The name is passed to <code>HelloHelper</code>&#39;s constructor, which sets the <code>HelloHelper.Name</code> property. When the JavaScript function <code>sayHello</code> is executed, <code>HelloHelper.SayHello</code> returns the <code>Hello, {Name}!</code> message, which is written to the console by the JavaScript function.</p>
+<p><em>JsInteropClasses/HelloHelper.cs</em>:</p>
+<pre><code class="lang-csharp" highlight-lines="5,10-11">public class HelloHelper
 {
     public HelloHelper(string name)
     {
@@ -188,8 +355,8 @@ namespace MyLib
     [JSInvokable]
     public string SayHello() =&gt; $&quot;Hello, {Name}!&quot;;
 }
-</code></pre><p><em>Output</em>:</p>
-<pre><code>Hello, Blazor!
+</code></pre><p>Console output in the browser&#39;s web developer tools:</p>
+<pre><code class="lang-console">Hello, Blazor!
 </code></pre><h2 id="share-interop-code-in-a-blazor-class-library">Share interop code in a Blazor class library</h2>
 <p>JavaScript interop code can be included in a Blazor class library (<code>dotnet new blazorlib</code>), which allows you to share the code in a NuGet package.</p>
 <p>The Blazor class library handles embedding JavaScript resources in the built assembly. The JavaScript files are placed in the <em>wwwroot</em> folder, and the tooling takes care of embedding the resources when the library is built.</p>
