@@ -85,7 +85,8 @@
 </li>
 </ol>
 <div class="NOTE"><h5>Note</h5><p>If not using Visual Studio, create the Blazor app at a command prompt on Windows, macOS, or Linux:</p>
-<pre><code class="lang-console">dotnet new blazor -o BlazorApp1
+<pre><code class="lang-console">dotnet new --install &quot;Microsoft.AspNetCore.Blazor.Templates&quot;
+dotnet new blazor -o BlazorApp1
 cd BlazorApp1
 dotnet run
 </code></pre><p>Navigate to the app using the localhost address and port provided in the console window output after <code>dotnet run</code> is executed. Use <strong>Ctrl-C</strong> in the console window to shutdown the app.</p>
@@ -362,12 +363,12 @@ string newTodo;
 &lt;/ul&gt;
 </code></pre></li>
 <li><p>To verify that these values are bound, update the <code>h1</code> header to show a count of the number of todo items that are not yet done (<code>IsDone</code> is <code>false</code>).</p>
-<pre><code class="lang-cshtml">&lt;h1&gt;Todo (@todos.Where(todo =&gt; !todo.IsDone).Count())&lt;/h1&gt;
+<pre><code class="lang-cshtml">&lt;h1&gt;Todo (@todos.Count(todo =&gt; !todo.IsDone))&lt;/h1&gt;
 </code></pre></li>
 <li><p>The completed <code>Todo</code> component should look like this:</p>
 <pre><code class="lang-cshtml">@page &quot;/todo&quot;
 
-&lt;h1&gt;Todo (@todos.Where(todo =&gt; !todo.IsDone).Count())&lt;/h1&gt;
+&lt;h1&gt;Todo (@todos.Count(todo =&gt; !todo.IsDone))&lt;/h1&gt;
 
 &lt;ul&gt;
     @foreach (var todo in todos)

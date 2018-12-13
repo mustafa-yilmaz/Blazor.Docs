@@ -76,7 +76,7 @@
 <p>To debug a client-side Blazor app in Chrome:</p>
 <ul>
 <li>Build a Blazor app in <code>Debug</code> configuration (the default for non-published apps).</li>
-<li>Run the Blazor app in Chrome.</li>
+<li>Run the Blazor app in Chrome (verion 70 or later).</li>
 <li>With the keyboard focus on the app (not in the dev tools panel, which you should probably close for a less confusing debugging experience), select the following Blazor-specific keyboard shortcut:<ul>
 <li><code>Shift+Alt+D</code> on Windows/Linux</li>
 <li><code>Shift+Cmd+D</code> on macOS</li>
@@ -91,13 +91,13 @@
 <p>You might be wondering why we don&#39;t just use browser source maps. Source maps allow the browser to map compiled files back to their original source files. However, Blazor does not map C# directly to JS/WASM (at least not yet). Instead, Blazor does IL interpretation within the browser, so source maps aren&#39;t relevant.</p>
 <p>Note that the debugger capabilities are <strong>very limited.</strong> You can currently only:</p>
 <ul>
-<li>Single-step through the current method (<code>F10</code>) or resume (<code>F8</code>).</li>
+<li>Set and remove breakpoints.</li>
+<li>Single-step through the code or resume (<code>F8</code>).</li>
 <li>In the <em>Locals</em> display, observe the values of any local variables of type <code>int</code>, <code>string</code>, and <code>bool</code>.</li>
 <li>See the call stack, including call chains that go from JavaScript into .NET and from .NET to JavaScript.</li>
 </ul>
 <p>You <em>can&#39;t</em>:</p>
 <ul>
-<li>Step into child methods (<code>F11</code>).</li>
 <li>Observe the values of any locals that aren&#39;t an <code>int</code>, <code>string</code>, or <code>bool</code>.</li>
 <li>Observe the values of any class properties or fields.</li>
 <li>Hover over variables to see their values</li>
