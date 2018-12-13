@@ -111,28 +111,20 @@
 <li><p>In a console window, navigate to root of the repo (where the <em>docfx.json</em> file resides) and run the following command:</p>
 <pre><code>docfx --serve
 </code></pre></li>
-<li><p>In a browser, navigate to <code>http://localhost:8080</code>.</p>
-</li>
+<li>In a browser, navigate to <code>http://localhost:8080</code>.</li>
 </ul>
 <h3 id="mono-instructions">Mono instructions</h3>
 <ul>
 <li><p>Install Mono via Homebrew:</p>
 <pre><code>brew install mono
 </code></pre></li>
-<li><p>Download the <a href="https://github.com/dotnet/docfx/releases">latest version of DocFX</a>.</p>
-</li>
-<li>Extract the archive to <em>/bin/docfx</em>.</li>
-<li><p>Create an alias for <strong>docfx</strong>:</p>
-<pre><code>function docfx {
-  mono $HOME/bin/docfx/docfx.exe
-}
-
-function docfx-serve {
-  mono $HOME/bin/docfx/docfx.exe serve _site
-}
+<li>Download the <a href="https://github.com/dotnet/docfx/releases">latest version of DocFX</a>.</li>
+<li>Extract the archive to <em>$HOME/bin/docfx</em>.</li>
+<li><p>Create a pair of aliases for <strong>docfx</strong> in a bash shell. The first alias is used to build the documentation. The second alias is used to build and serve the documentation.</p>
+<pre><code>alias docfx=&#39;mono $HOME/bin/docfx/docfx.exe&#39;
+alias docfx-serve=&#39;mono $HOME/bin/docfx/docfx.exe --serve&#39;
 </code></pre></li>
-<li><p>Run <code>docfx</code> from the root of the repo to build the site, and <code>docfx-serve</code> to view the site at <code>http://localhost:8080</code>.</p>
-</li>
+<li>Execute <code>docfx</code> from the root of the repo to build the site. Execute <code>docfx-serve</code> to view the site at <code>http://localhost:8080</code>.</li>
 </ul>
 <h2 id="voice-and-tone">Voice and tone</h2>
 <p>Our goal is to write documentation that is easily understandable by the widest possible audience. To that end, we&#39;ve established guidelines for writing style that we ask our contributors to follow. For more information, see <a href="https://github.com/dotnet/docs/blob/master/styleguide/voice-tone.md">Voice and tone guidelines</a> in the .NET repo.</p>
